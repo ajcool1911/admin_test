@@ -1,0 +1,28 @@
+<%= form_with(model: @feadback, url: feadbacks_path , method: :post, local: true, required: true) do |f| %>
+<div id="form-main">
+<div id="form-div">
+  <h2 class="white-text" style="color: white;"> Feadback Back Form <h2>
+  <form class="form" id="form1">
+    
+    <p class="firstname">
+      <%= f.text_field :firstname, type:"text", class:"validate[required,custom[onlyLetter],length[0,100]] feedback-input", placeholder:"First Name" ,id:"name" %>
+    </p
+    
+    <p class="lastname">
+      <%= f.text_field :lastname, type:"text", class:"validate[required,custom[email]] feedback-input" ,id:"email" ,placeholder:"Last name" %>
+    </p>
+    
+    <p class="reviews">
+      <%= f.text_area :reviews, class:"validate[required,length[6,300]] feedback-input", id:"comment", placeholder:"Enter your review here" %>
+    </p>
+
+    <p class="description">
+    <%= f.text_area :description ,class:"validate[required,length[6,300]] feedback-input", id:"comment" ,placeholder:"Enter your description" %>
+  </p>
+    
+    
+    <div class="submit">
+      <%= f.submit %>
+    </div>
+  </form>
+<%end%>

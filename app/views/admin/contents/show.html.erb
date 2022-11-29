@@ -1,0 +1,47 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    Show Page
+  </h1>
+
+  <div>
+    <%= link_to 'Edit Item', edit_admin_content_path, class: "button" %>
+  </div>
+</header>
+
+<section class="main-content__body">
+  <dl>
+      
+     <dt class="attribute-label" id="id">ID</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.id %>
+      </dd>
+
+
+      <dt class="attribute-label" id="id">Name</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.name %>
+      </dd>
+
+      <dt class="attribute-label" id="id">Short Description</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.shortdesc %>
+      </dd>
+
+      <dt class="attribute-label" id="id">Long Description</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.longdesc %>
+      </dd>
+
+      <dt class="attribute-label" id="id">Location</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.location %>
+      </dd>
+
+      <dt class="attribute-label" id="id">status</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @content.status %>
+      </dd>
+      
+   
+  </dl>
+</section>

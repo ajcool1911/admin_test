@@ -1,0 +1,64 @@
+
+<header class="main-content__header" role="banner">
+<h1 class="main-content__page-title">
+   Edit Item
+</h1>
+
+<div>
+  <%= link_to 'Back', admin_contents_path, class: "button" %>
+</div>
+</header>
+
+<section class="main-content__body">
+   
+<%= form_with(model: @content, url: admin_content_path , method: :put, local: true, required: true) do |f| %>
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+    <%= f.label :Name %>
+    </div>
+    <div class="field-unit__field">
+    <%= f.text_field :name, placeholder: "Enter Content Name" %>
+    </div>
+  </div>
+  
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+    <%= f.label :shortdesc %>
+    </div>
+    <div class="field-unit__field">
+    <%= f.text_field :shortdesc, placeholder: "enter short descripton" %>
+    </div>
+  </div>
+  
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+    <%= f.label :longdesc %>
+    </div>
+    <div class="field-unit__field">
+    <%= f.text_field :longdesc, placeholder: "enter long descripton" %>
+    </div>
+  </div>
+
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+    <%= f.label :location %>
+    </div>
+    <div class="field-unit__field">
+    <%= f.select :location, ["TOP","BOTTOM","RIGHT","LEFT","CENTER"]%>
+    </div>
+  </div>
+
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+    <%= f.label :Status %>
+    </div>
+    <div class="field-unit__field">
+    <%= f.select :status, ["PUBLISH","DRAFT"]%>
+    </div>
+  </div>
+  
+  <div>
+  <%= f.submit %>
+  </div>
+  <% end %>
+</section>
